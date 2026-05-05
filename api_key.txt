@@ -1,0 +1,14 @@
+The OMDb API <donotreply@omdbapi.com>
+	
+09:59 (0 minut temu)
+	
+	
+do mnie
+Here is your key: 56ebccac
+
+Please append it to all of your API requests,
+
+OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=56ebccac
+
+Click the following URL to activate your key: http://www.omdbapi.com/apikey.aspx?VERIFYKEY=07688b3c-b77e-44c7-9b26-17dfc745ec1d
+If you did not make this request, please disregard this email.
