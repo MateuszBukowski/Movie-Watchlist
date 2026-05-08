@@ -5,6 +5,8 @@
 const apiKey = "56ebccac"
 
 let movieTitle = ""
+let myWatchlist = []
+let searchList = []
 
 const serchInput = document.getElementById("search-input")
 const serchResult = document.getElementById("serch-result")
@@ -12,6 +14,22 @@ const serchResult = document.getElementById("serch-result")
 document.addEventListener('submit', function(e){
     e.preventDefault()
     searchMovie()
+})
+
+document.addEventListener('click', function(e){
+    let element = String(e.target.id)
+    if (( element === "search-input") || ( element === "")){
+        return
+    } else {
+        searchList.forEach(function(movie){
+            if (movie.imdbID === element){
+                myWatchlist.push(movie)
+                console.log(myWatchlist)
+            }
+        })
+        // Test local storage
+        localStorage.setItem("myWatchlist", JSON.stringify(myWatchlist))
+    }
 })
 
 function searchMovie(){
@@ -32,24 +50,17 @@ function getMovieResult(data) {
     let htmlResult = ""
     for (let movie = 0; movie < data.length ; movie++)
         {   
-            console.log(data[movie])
+            searchList.push(data[movie])
             htmlResult += `
                 <h3>${data[movie].Title}</h3>
                 <img src="${data[movie].Poster}" alt="Movie Poster">
                 <p>${data[movie].Year}</p>
                 <p>${data[movie].Type}</p>
+                <button class="add-movie" id=${data[movie].imdbID}>+ Watchlist</button>
                 <hr>
             `
         }
-        // <p>${data[movie].Ratings[0].Value}</p>
+    // console.log(searchList)
     return htmlResult
 }
 
-// Search:
-// {Title: 'Spider-Man: No Way Home', 
-//     Year: '2021', 
-//     imdbID: 'tt10872600', 
-//     Type: 'movie', 
-//     Poster: 'https://m.media-amazon.com/images/M/MV5BMmFiZGZjMm…TQ2XkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg'}
-
-// Title:
