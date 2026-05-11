@@ -26,11 +26,15 @@ function getMovieResult(data) {
     for (let movie = 0; movie < data.length ; movie++)
         {   
             htmlResult += `
-                <h3>${data[movie].Title}</h3>
-                <img src="${data[movie].Poster}" alt="Movie Poster">
-                <p>${data[movie].Year}</p>
-                <p>${data[movie].Type}</p>
-                <button class="del-movie" id=${data[movie].imdbID}>- Remove</button>
+                <div id="movie-watchlist">
+                    <img src="${data[movie].Poster}" alt="Movie Poster">
+                    <div id="watchlist-data">
+                        <h3>${data[movie].Title}</h3>
+                        <p>${data[movie].Year}</p>
+                        <p>${data[movie].Type}</p>
+                        <button class="remove-movie" id=${data[movie].imdbID}>- Watchlist</button>
+                    </div>
+                </div>
                 <hr>
             `
         }

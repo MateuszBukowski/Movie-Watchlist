@@ -1,4 +1,50 @@
 html, body {
     margin: 0;
-    padding: 0;
+    padding: 20;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+
+nav a {
+    margin: auto 0 auto auto;
+}
+
+form {
+    color: gray;
+}
+
+form input {
+    width: 80%;
+    margin-right: 0;
+    padding: 6px;
+    border-radius: 5px solid 1px lightgray;
+    background-color: white;
+}
+
+form button {
+    margin-left: 0;
+    padding: 6px;
+    border-radius: 5px solid 1px;
+    background-color: white;
+}
+
+#serch-result img,
+#watchlist-result img {
+    width: 100px;
+    height: 150px;
+}
+
+#movie-result,
+#movie-watchlist {
+    display: flex;
+
+}
+
+#movie-data,
+#watchlist-data {
+    margin: 10px;
 }

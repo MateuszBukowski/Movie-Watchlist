@@ -52,11 +52,15 @@ function getMovieResult(data) {
         {   
             searchList.push(data[movie])
             htmlResult += `
-                <h3>${data[movie].Title}</h3>
-                <img src="${data[movie].Poster}" alt="Movie Poster">
-                <p>${data[movie].Year}</p>
-                <p>${data[movie].Type}</p>
-                <button class="add-movie" id=${data[movie].imdbID}>+ Watchlist</button>
+                <div id="movie-result">
+                    <img src="${data[movie].Poster}" alt="Movie Poster">
+                    <div id="movie-data">
+                        <h3>${data[movie].Title}</h3>
+                        <p>${data[movie].Year}</p>
+                        <p>${data[movie].Type}</p>
+                        <button class="add-movie" id=${data[movie].imdbID}>+ Watchlist</button>
+                    </div>
+                </div>
                 <hr>
             `
         }
